@@ -10,6 +10,6 @@ namespace Message_App.Core.IRepositories
         Task<T> GetById(Guid id);
         Task<bool> Add(T entity);
         Task<bool> Delete(Guid id);
-        Task<bool> Upsert(T entity);
+        Task<bool> Update(T entity);
     }
 }

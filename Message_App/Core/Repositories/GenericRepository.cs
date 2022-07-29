@@ -32,7 +32,7 @@ namespace Message_App.Core.Repositories
             return true;
         }
 
-        public virtual Task<bool> Upsert(T entity)
+        public virtual Task<bool> Update(T entity)
         {
             throw new NotImplementedException();
         }

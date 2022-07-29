@@ -1,3 +1,4 @@
+using Message_App.Core.IConfiguration;
 using Message_App.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,6 +34,9 @@ namespace Message_App
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Message_App", Version = "v1" });
             });
 
+
+            //Adding unit of work to the dependency injection 
+            services.AddScoped<IUnitOfWork, Data.UnitOfWork>();
 
         }
 
