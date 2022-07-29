@@ -19,6 +19,15 @@ namespace Message_App.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Users>().HasKey(x => x.Id);
+            modelBuilder.Entity<Users>().Property(x => x.Password).IsRequired(true);
+            modelBuilder.Entity<Users>().Property(x => x.FirstName).IsRequired(true);
+            modelBuilder.Entity <Users>().Property(x=>x.LastName).IsRequired(true);
+            modelBuilder.Entity <Users>().Property(x=>x.Email).IsRequired(true);
+
+            modelBuilder.Entity<Message>().HasKey(x=>x.Id);
+            modelBuilder.Entity<Message>().Property(x=>x.Content).IsRequired(true);
+
             modelBuilder.Entity<Message>().HasOne(x => x.User).WithMany(y => y.Messages).HasForeignKey(z => z.UserId);
 
             modelBuilder.Entity<Users>().HasData(new Users
