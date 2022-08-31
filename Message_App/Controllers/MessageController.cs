@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace Message_App.Controllers
 {
     [ApiController]
-    [Route("controller")]
-    public class MessageController : Controller
+    [Route("Message")]
+    public class MessageController : ControllerBase
     {
         private readonly ILogger<MessageController> _logger;
         private readonly IUnitOfWork _unitOfWork;
