@@ -69,7 +69,7 @@ namespace Message_AppUI.Controllers
                 }
                 else
                 {
-                    TempData["mesajHata"] = "Username or password is wrong!";
+                    TempData["Warn"] = "Username or password is wrong!";
                     return RedirectToAction("Login", "Home");
                 }
             }
