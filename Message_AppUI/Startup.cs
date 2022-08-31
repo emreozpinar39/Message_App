@@ -25,6 +25,7 @@ namespace Message_AppUI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSignalR();
             services.AddControllers()
                     .AddJsonOptions(options =>
                     {
@@ -64,7 +65,9 @@ namespace Message_AppUI
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Message}/{action=Index}/{id?}");
+
+                endpoints.MapHub<SignalServer>("/signalServer");
             });
         }
     }

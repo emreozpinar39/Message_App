@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Message>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3 class="text-danger">@TempData["Warn"]</h3>
+
+<div>
+    <a asp-action="Create" class="btn btn-primary">New Message</a>
+</div>
+
+<h1>Messages</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Send By
+            </th>
+            <th>
+                Message
+            </th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody">
+
+    </tbody>
+</table>
