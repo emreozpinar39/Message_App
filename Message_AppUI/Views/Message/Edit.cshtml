@@ -1,0 +1,49 @@
+﻿@model Message_AppUI.Models.Message
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Message</h1>
+
+
+<h3 class="text-danger">@TempData["messageFail"]</h3>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="Id" type="hidden" value="@Model.Id" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Content" class="control-label"><b>Mesaj</b></label>
+                <input asp-for="Content" class="form-control" />
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MessageDate" class="control-label"><b>Mesaj Tarihi</b></label><br />
+                <label>@Model.MessageDate</label>
+                <input asp-for="MessageDate" type="hidden" value="@Model.MessageDate" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label"><b>Gönderen</b></label><br />
+                <label>@Model.User.FirstName @Model.User.LastName</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label"><b>E-mail</b></label><br />
+                <label>@Model.User.Email</label>
+            </div>
+            <div class="form-group">
+                <input asp-for="@Model.UserId" type="hidden" value="@Model.UserId" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-primary">Back to List</a>
+</div>
