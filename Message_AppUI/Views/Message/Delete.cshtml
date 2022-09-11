@@ -19,22 +19,22 @@
         <form asp-action="Delete" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Content" class="control-label"><b>Mesaj Id</b></label><br />
+                <label asp-for="Content" class="control-label"><b>Id</b></label><br />
                 <label>@Model.Id</label>
                 <input asp-for="Id" type="hidden" value="@Model.Id" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Content" class="control-label"><b>Mesaj</b></label><br />
+                <label asp-for="Content" class="control-label"><b>Message</b></label><br />
                 <label>@Model.Content</label>
                 <input asp-for="Content" type="hidden" value="@Model.Content" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="MessageDate" class="control-label"><b>Mesaj Tarihi</b></label><br />
+                <label asp-for="MessageDate" class="control-label"><b>Message Date</b></label><br />
                 <label>@Model.MessageDate</label>
                 <input asp-for="MessageDate" type="hidden" value="@Model.MessageDate" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="UserId" class="control-label"><b>Gönderen</b></label><br />
+                <label asp-for="UserId" class="control-label"><b>Send By</b></label><br />
                 <label>@Model.User.FirstName @Model.User.LastName</label>
                 <input asp-for="UserId" type="hidden" value="@Model.UserId" class="form-control" />
             </div>

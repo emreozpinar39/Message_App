@@ -3,6 +3,7 @@ using Message_App.Data;
 using Message_App.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -46,5 +47,16 @@ namespace Message_App.Core.Repositories
 
         }
 
+        public async Task<bool> DeleteByUserId(Guid userId)
+        {
+            var messages = await dbSet.Where(x => x.UserId == userId).ToListAsync();
+            if (messages != null)
+            {
+                dbSet.RemoveRange(messages);
+                return true;
+            }
+             
+            return false;
+        }
     }
 }

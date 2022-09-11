@@ -17,17 +17,17 @@
                 <input asp-for="Id" type="hidden" value="@Model.Id" class="form-control" />
             </div>
             <div class="form-group">
-                <label asp-for="Content" class="control-label"><b>Mesaj</b></label>
+                <label asp-for="Content" class="control-label"><b>Message</b></label>
                 <input asp-for="Content" class="form-control" />
                 <span asp-validation-for="Content" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="MessageDate" class="control-label"><b>Mesaj Tarihi</b></label><br />
+                <label asp-for="MessageDate" class="control-label"><b>Message Date</b></label><br />
                 <label>@Model.MessageDate</label>
                 <input asp-for="MessageDate" type="hidden" value="@Model.MessageDate" class="form-control" />
             </div>
             <div class="form-group">
-                <label class="control-label"><b>Gönderen</b></label><br />
+                <label class="control-label"><b>Send By</b></label><br />
                 <label>@Model.User.FirstName @Model.User.LastName</label>
             </div>
             <div class="form-group">

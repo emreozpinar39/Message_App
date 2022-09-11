@@ -76,6 +76,7 @@ namespace Message_App.Controllers
             }
 
             await _unitOfWork.Users.Delete(id);
+            await _unitOfWork.Messages.DeleteByUserId(id);
             await _unitOfWork.CompleteAsync();
 
             return Content("User Delete Completed");

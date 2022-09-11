@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Message>
+﻿@using System.Security.Claims
+@model IEnumerable<Message>
 
 @{
     ViewData["Title"] = "Index";
@@ -8,6 +9,13 @@
 
 <div>
     <a asp-action="Create" class="btn btn-primary">New Message</a>
+    @if (User.FindFirstValue("ID") != null )
+    {
+        if ( User.FindFirst(ClaimTypes.Email).Value == "admin@admin.com")
+        {
+          <a asp-action="Index" asp-controller="User" class="btn btn-primary">Users</a>
+        }
+    }
 </div>
 
 <h1>Messages</h1>
